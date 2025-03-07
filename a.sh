@@ -9,9 +9,9 @@ HOST_ENTRIES=(
 		)
 
 
-wget -P /root/Downloads/ https://github.com/anshu15183/RHCE_Setup/raw/refs/heads/main/files.rar
-mkdir /root/Downloads/files && unzip /root/Downloads/files.rar /root/Downloads/files/
-rm -rf /root/Downloads/files.rar
+wget -P /root/Downloads/ https://github.com/anshu15183/RHCE_Setup/raw/refs/heads/main/files.zip
+mkdir /root/Downloads/files && unzip /root/Downloads/files.zip /root/Downloads/files/
+rm -rf /root/Downloads/files.zip
 
 
 echo "Backing up /etc/hosts..."
