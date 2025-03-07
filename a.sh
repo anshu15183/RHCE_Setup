@@ -90,7 +90,7 @@ echo "Opening the web page in the browser..."
 xdg-open http://localhost/files
 
 
-wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/repo.yml && ansible-playbook /home/admin/ansible/repo.yml
+wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/repo.yml && ansible-playbook /home/admin/ansible/repo.yml -i /home/admin/ansible/inventory
 
 
 
