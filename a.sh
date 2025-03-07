@@ -10,7 +10,7 @@ HOST_ENTRIES=(
 
 
 wget -P /root/Downloads/ https://github.com/anshu15183/RHCE_Setup/raw/refs/heads/main/files.zip
-mkdir /root/Downloads/files && unzip /root/Downloads/files.zip -d /root/Downloads/files/
+unzip /root/Downloads/files.zip -d /root/Downloads/
 rm -rf /root/Downloads/files.zip
 
 
