@@ -58,13 +58,13 @@ EOF
 	fi
 done
 
-mkdir /home/admin/ansible
-mkdir /home/admin/ansible/roles
-mkdir /home/admin/ansible/mycollection
+mkdir /home/student/ansible
+mkdir /home/student/ansible/roles
+mkdir /home/student/ansible/mycollection
 
 
-wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/inventory
-wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/ansible.cfg
+wget -P /home/student/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/inventory
+wget -P /home/student/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/ansible.cfg
 
 
 dnf install -y ansible* 
@@ -90,7 +90,7 @@ echo "Opening the web page in the browser..."
 xdg-open http://localhost/files
 
 
-wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/repo.yml && ansible-playbook /home/admin/ansible/repo.yml -i /home/admin/ansible/inventory
+wget -P /home/student/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/repo.yml && ansible-playbook /home/student/ansible/repo.yml -i /home/student/ansible/inventory
 
 
 
