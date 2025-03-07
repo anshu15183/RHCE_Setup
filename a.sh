@@ -23,7 +23,8 @@ wget -P /home/admin/ansible/ https://github.com/anshu15183/RHCE_Setup/raw/refs/h
 mkdir /root/Downloads/files && unzip /home/admin/ansible/files.rar /root/Downloads/files/
 rm -rf /root/Downloads/files.rar
 
-
+dnf install -y ansible* 
+dnf install -y rhel-system-roles
 
 
 
