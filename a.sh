@@ -9,23 +9,9 @@ HOST_ENTRIES=(
 		)
 
 
-
-
-
-echo "Adding inventory and ansible.cfg files in /home/admin/ansible/"
-mkdir /home/admin/ansible
-mkdir /home/admin/ansible/roles
-mkdir /home/admin/ansible/mycollection
-
-wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/inventory
-wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/ansible.cfg
-wget -P /home/admin/ansible/ https://github.com/anshu15183/RHCE_Setup/raw/refs/heads/main/files.rar
-mkdir /root/Downloads/files && unzip /home/admin/ansible/files.rar /root/Downloads/files/
+wget -P /root/Downloads/ https://github.com/anshu15183/RHCE_Setup/raw/refs/heads/main/files.rar
+mkdir /root/Downloads/files && unzip /root/Downloads/files.rar /root/Downloads/files/
 rm -rf /root/Downloads/files.rar
-
-dnf install -y ansible* 
-dnf install -y rhel-system-roles
-
 
 
 echo "Backing up /etc/hosts..."
@@ -72,6 +58,21 @@ EOF
 	fi
 done
 
+mkdir /home/admin/ansible
+mkdir /home/admin/ansible/roles
+mkdir /home/admin/ansible/mycollection
+
+
+wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/inventory
+wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/ansible.cfg
+
+
+dnf install -y ansible* 
+dnf install -y rhel-system-roles
+
+
+
+
 echo "########  Exam practice environment created  #########"
 
 echo "Installing Apache HTTPD and copying data..."
@@ -89,8 +90,7 @@ echo "Opening the web page in the browser..."
 xdg-open http://localhost/files
 
 
-wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/repo.yml
-ansible-playbook /home/student/ansible/repo.yml
+wget -P /home/admin/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/repo.yml && ansible-playbook /home/student/ansible/repo.yml
 
 
 
