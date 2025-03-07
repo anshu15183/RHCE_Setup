@@ -86,12 +86,17 @@ sudo chown -R apache:apache /var/www/html/files
 sudo chmod -R 755 /var/www/html/files           
 sudo systemctl restart httpd
 
-echo "Opening the web page in the browser..."
-xdg-open http://localhost/files
+
 
 
 wget -P /home/student/ansible/ https://raw.githubusercontent.com/anshu15183/RHCE_Setup/refs/heads/main/repo.yml && ansible-playbook /home/student/ansible/repo.yml -i /home/student/ansible/inventory
 
+
+ansible all -m ping -i /home/student/ansible/inventory
+
+
+echo "Opening the web page in the browser..."
+xdg-open http://localhost/files
 
 
 echo "Script Executed Successully"
