@@ -99,5 +99,18 @@ echo "Opening the web page in the browser..."
 xdg-open http://localhost/files
 
 
+### Adding Vim Configuration ###
+echo "Configuring Vim with .vimrc settings..."
+cat <<EOL > ~/.vimrc
+set ai
+set ts=2
+set et
+set cursorcolumn
+EOL
+
+echo "Vim configuration applied successfully."
+
+
+
 echo "Script Executed Successully"
 
