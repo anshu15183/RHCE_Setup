@@ -99,23 +99,14 @@ echo "Opening the web page in the browser..."
 xdg-open http://localhost/files
 
 
-# System-wide Vim Configuration
 echo "Configuring Vim system-wide..."
-VIMRC_FILE="/etc/vimrc"
-
-# Add Vim settings if not already present
-if ! grep -q "set ai" "$VIMRC_FILE"; then
-    cat <<EOL >> "$VIMRC_FILE"
+cat <<EOL >> /etc/vimrc
 set ai
 set ts=2
 set et
 set cursorcolumn
 EOL
-    echo "Vim system-wide configuration added."
-else
-    echo "Vim settings already exist in /etc/vimrc."
-fi
-
+echo "Vim system-wide configuration added."
 
 
 
